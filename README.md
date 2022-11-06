@@ -2,7 +2,7 @@
 
 A Graphical User Interface for testing contracts with wallet.
 
-## What
+## A GUI Plugin for Hardhat
 
 This plugin help you to test and control your deployed contracts before production.
 It creates simple one-click app for contracts
@@ -29,7 +29,7 @@ import 'hardhat-gui';
 
 This plugin requires that contracts are deployed using hardhat-deploy plugin
 
-- [wighawag/hardhat-deploy](https://github.com/wighawag/hardhat-deploy.git)
+-   [wighawag/hardhat-deploy](https://github.com/wighawag/hardhat-deploy.git)
 
 ## Usage
 
