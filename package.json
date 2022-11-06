@@ -1,9 +1,9 @@
 {
-  "name": "@yecandir/hardhat-gui",
+  "name": "hardhat-gui",
   "version": "0.0.1",
-  "description": "Hardhat TypeScript plugin boilerplate",
-  "repository": "github:nomiclabs/hardhat-ts-plugin-boilerplate",
-  "author": "Nomic Labs LLC",
+  "description": "Hardhat Graphical User Interface",
+  "repository": "https://github.com/yecandir/hardhat-gui",
+  "author": "yecandir",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,12 +15,6 @@
   ],
   "scripts": {
     "postinstall": "cd ui && npm install",
-    "lint:fix": "prettier --write 'src/**/*.{js,ts}' 'test/**/*.{js,ts}' && tslint --fix --config tslint.json --project tsconfig.json",
-    "lint": "tslint --config tslint.json --project tsconfig.json",
-    "test": "mocha --exit --recursive 'test/**/*.test.ts'",
-    "build": "tsc",
-    "watch": "tsc -w",
-    "prepublishOnly": "npm run build",
     "start": "cd ui && npm run start"
   },
   "files": [
@@ -49,6 +43,6 @@
     "hardhat": "^2.0.0"
   },
   "publishConfig": {
-    "@yecandir:registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org"
   }
 }
