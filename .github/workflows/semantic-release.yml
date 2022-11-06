@@ -1,0 +1,32 @@
+name: Semantic Release
+
+on:
+    push:
+        branches:
+            - release
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [16.x]
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  token: ${{ secrets.MY_REPO_PAT }}
+                  submodules: recursive
+
+            - name: Install
+              run: npm ci
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.MY_REPO_PAT}}
+
+            - name: Build
+              run: npm run build
+
+            - name: Release
+              run: npx semantic-release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.MY_REPO_PAT }}
+                  NODE_AUTH_TOKEN: ${{ secrets.MY_REPO_PAT }}
