@@ -1,0 +1,80 @@
+{
+  "name": "hardhat-gui",
+  "version": "0.0.1",
+  "description": "Hardhat Graphical User Interface",
+  "author": "Nomic Labs LLC",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "ethereum",
+    "smart-contracts",
+    "hardhat",
+    "hardhat-plugin",
+    "hardhat-gui"
+  ],
+  "scripts": {
+    "lint:fix": "prettier --write 'src/**/*.{js,ts}' 'test/**/*.{js,ts}' && tslint --fix --config tslint.json --project tsconfig.json",
+    "lint": "tslint --config tslint.json --project tsconfig.json",
+    "test": "mocha --exit --recursive 'test/**/*.test.ts'",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "prepublishOnly": "npm run build",
+    "react-start": "cd ui && react-scripts start",
+    "react-build": "cd ui && react-scripts build",
+    "react-test": "cd ui && react-scripts test",
+    "react-eject": "cd ui && react-scripts eject"
+  },
+  "files": [
+    "dist/src/",
+    "src/",
+    "LICENSE",
+    "README.md"
+  ],
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@ethersproject/providers": "^5.7.2",
+    "@mui/material": "^5.10.12",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.3",
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "ethers": "^5.7.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.8.4",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/fs-extra": "^5.0.4",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^8.10.38",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.2",
+    "prettier": "2.0.5",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^4.0.3"
+  },
+  "peerDependencies": {
+    "hardhat": "^2.0.0"
+  },
+  "release": {
+    "branches": [
+      "release"
+    ]
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/babylons-io"
+  }
+}
