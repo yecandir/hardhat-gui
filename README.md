@@ -1,6 +1,6 @@
 # hardhat-gui
 
-A Graphical User Interface for testing with wallet.
+A Graphical User Interface for testing contracts with wallet.
 
 ## What
 
@@ -8,8 +8,6 @@ This plugin help you to test and control your deployed contracts before producti
 It creates simple one-click app for contracts
 
 ## Installation
-
-<_A step-by-step guide on how to install the plugin_>
 
 ```bash
 npm install hardhat-gui
@@ -33,21 +31,16 @@ This plugin requires that contracts are deployed using hardhat-deploy plugin
 
 -   [wighawag/hardhat-deploy](https://github.com/wighawag/hardhat-deploy.git)
 
-## Tasks
+## Usage
 
-This plugin creates no additional tasks.
+First deploy your contracts if you are not already deployed
 
-You can simply start your react interface by
+```bash
+npx hardhat deploy
+```
+
+Last start react server
 
 ```bash
 npx hardhat gui
 ```
-
-## Usage
-
-<_A description of how to use this plugin. How to use the tasks if there are any, etc._>
-
-There are no additional steps you need to take for this plugin to work.
-
-Install it and access ethers through the Hardhat Runtime Environment anywhere
-you need it (tasks, scripts, tests, etc).
