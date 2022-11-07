@@ -6,6 +6,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 
 export default class Sidebar extends React.Component<
     { setChainId: any; setAddress: any },
@@ -33,11 +34,10 @@ export default class Sidebar extends React.Component<
                         this.props.setAddress(address);
                     }}
                 >
-                    {name}
-                    {' - '}
-                    {address?.substring(0, 12)}
-                    {'...'}
-                    {address?.substring(32, 42)}
+                    <Grid container>
+                        <Grid style={{ fontSize: 14 }}>{name}</Grid>
+                        <Grid style={{ fontSize: 12 }}>{address}</Grid>
+                    </Grid>
                 </Button>
             </AccordionDetails>
         );
