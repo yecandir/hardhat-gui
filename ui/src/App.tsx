@@ -31,19 +31,23 @@ function App() {
                                     setChainId={setChainId}
                                 />
                             </Grid>
-                            <Grid item xs={3}>
-                                <ContractFunctions
-                                    chainId={chainId}
-                                    address={address}
-                                    setFunctionName={setFunctionName}
-                                />
-                            </Grid>
-                            <Grid item xs={5}>
-                                <ContractExecutor
-                                    chainId={chainId}
-                                    address={address}
-                                    function={functionName}
-                                />
+                            <Grid item xs={8}>
+                                <Grid container>
+                                    <Grid item xs={5}>
+                                        <ContractFunctions
+                                            chainId={chainId}
+                                            address={address}
+                                            setFunctionName={setFunctionName}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={7}>
+                                        <ContractExecutor
+                                            chainId={chainId}
+                                            address={address}
+                                            function={functionName}
+                                        />
+                                    </Grid>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Grid>

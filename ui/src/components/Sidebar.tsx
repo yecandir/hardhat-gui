@@ -1,10 +1,9 @@
 import React from 'react';
-import { ChainInfo, ContractInfo } from '../chains/chains';
+import { ChainInfo } from '../chains/chains';
 import _chains from '../chains/chains.json';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 
@@ -35,8 +34,12 @@ export default class Sidebar extends React.Component<
                     }}
                 >
                     <Grid container>
-                        <Grid style={{ fontSize: 14 }}>{name}</Grid>
-                        <Grid style={{ fontSize: 12 }}>{address}</Grid>
+                        <Grid item xs={12} style={{ fontSize: 12 }}>
+                            {name}
+                        </Grid>
+                        <Grid item xs={12} style={{ fontSize: 10 }}>
+                            {address}
+                        </Grid>
                     </Grid>
                 </Button>
             </AccordionDetails>
@@ -70,6 +73,16 @@ export default class Sidebar extends React.Component<
             );
         });
 
-        return <div>{items}</div>;
+        return (
+            <div
+                style={{
+                    maxHeight: 600,
+                    overflow: 'auto',
+                    borderRight: '0.5em solid rgba(50,50,50,0.1)'
+                }}
+            >
+                {items}
+            </div>
+        );
     }
 }

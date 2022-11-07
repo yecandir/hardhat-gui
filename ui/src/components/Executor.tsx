@@ -5,6 +5,7 @@ import _chains from '../chains/chains.json';
 import { ChainInfo } from '../chains/chains';
 import Button from '@mui/material/Button';
 import { InputFormBuilder } from './InputFormBuilder';
+import Grid from '@mui/material/Grid';
 
 export default function ContractExecutor(props: {
     chainId: number;
@@ -37,10 +38,16 @@ export default function ContractExecutor(props: {
     );
 
     return (
-        <div>
-            <div>{props.chainId}</div>
-            <div>{props.address}</div>
-            <div>{props.function}</div>
+        <Grid>
+            <Grid item style={{ marginBottom: 5 }}>
+                {props.chainId}
+            </Grid>
+            <Grid item style={{ marginBottom: 5 }}>
+                {props.address}
+            </Grid>
+            <Grid item style={{ marginBottom: 10 }}>
+                {props.function}
+            </Grid>
             <InputFormBuilder
                 inputs={funcAbi?.inputs || []}
                 onInputChange={(value: string, index: number) => {
@@ -66,7 +73,7 @@ export default function ContractExecutor(props: {
                 Execute{' '}
             </Button>
             <div>Result: {result?.toString()}</div>
-        </div>
+        </Grid>
     );
 }
 
