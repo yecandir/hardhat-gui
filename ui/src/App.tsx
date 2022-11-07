@@ -24,7 +24,12 @@ function App() {
                                 <Navbar />
                             </Grid>
                         </Grid>
-                        <Grid container style={{ marginTop: 30 }}>
+                        <Grid
+                            container
+                            style={{
+                                marginTop: 30
+                            }}
+                        >
                             <Grid item xs={4}>
                                 <Sidebar
                                     setAddress={setAddress}
@@ -33,7 +38,14 @@ function App() {
                             </Grid>
                             <Grid item xs={8}>
                                 <Grid container>
-                                    <Grid item xs={5}>
+                                    <Grid
+                                        item
+                                        xs={5}
+                                        style={{
+                                            maxHeight: 600,
+                                            overflow: 'auto'
+                                        }}
+                                    >
                                         <ContractFunctions
                                             chainId={chainId}
                                             address={address}

@@ -40,13 +40,13 @@ export default function ContractExecutor(props: {
     return (
         <Grid>
             <Grid item style={{ marginBottom: 5 }}>
-                {props.chainId}
+                ChainId: {props.chainId}
             </Grid>
             <Grid item style={{ marginBottom: 5 }}>
                 {props.address}
             </Grid>
             <Grid item style={{ marginBottom: 10 }}>
-                {props.function}
+                Function: {props.function}
             </Grid>
             <InputFormBuilder
                 inputs={funcAbi?.inputs || []}
@@ -57,6 +57,8 @@ export default function ContractExecutor(props: {
                 }}
             />
             <Button
+                variant="outlined"
+                style={{ marginTop: 15, marginBottom: 15 }}
                 onClick={() => {
                     handleTransaction(
                         props.chainId == chainId,

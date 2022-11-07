@@ -137,8 +137,9 @@ export function ContractFunctions(props: {
     });
 
     return (
-        <div>
+        <div style={{ marginBottom: 5 }}>
             <Button
+                variant="contained"
                 color={isRead ? 'secondary' : 'primary'}
                 onClick={() => {
                     setIsRead(true);
@@ -147,6 +148,8 @@ export function ContractFunctions(props: {
                 Read
             </Button>
             <Button
+                style={{ marginLeft: '10px' }}
+                variant="contained"
                 color={!isRead ? 'secondary' : 'primary'}
                 onClick={() => {
                     setIsRead(false);
