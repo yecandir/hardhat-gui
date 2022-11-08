@@ -1,6 +1,6 @@
 {
   "name": "hardhat-gui",
-  "version": "0.0.11",
+  "version": "0.0.13",
   "description": "Hardhat Graphical User Interface",
   "repository": "https://github.com/yecandir/hardhat-gui",
   "author": "yecandir",
@@ -18,8 +18,10 @@
     "hardhat-ui"
   ],
   "scripts": {
+    "publish": "",
     "start": "cd ui && npm run start",
-    "postinstall": "submodules-install"
+    "postinstall": "submodules-install",
+    "build": "tsc"
   },
   "files": [
     "dist/",
@@ -51,6 +53,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
+    "typescript": "^4.0.3",
     "submodules-install": "^1.0.2"
   },
   "submodules": [
