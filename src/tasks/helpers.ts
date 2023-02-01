@@ -28,12 +28,14 @@ export async function getDeployedContracts(_path: string) {
     if (stat && stat.isFile()) {
       if (file.endsWith(".json")) {
         const name = file.replace(".json", "");
-        const contractJsonFile = fs.readFileSync(filePath, "utf8");
-        const contractJson = JSON.parse(contractJsonFile);
-        const address = contractJson.address;
-        const abi = contractJson.abi;
-        const contract = new ContractInfo(address, filePath, name, abi);
-        contracts.push(contract);
+        if (!name.endsWith("_Proxy")) {
+          const contractJsonFile = fs.readFileSync(filePath, "utf8");
+          const contractJson = JSON.parse(contractJsonFile);
+          const address = contractJson.address;
+          const abi = contractJson.abi;
+          const contract = new ContractInfo(address, filePath, name, abi);
+          contracts.push(contract);
+        }
       }
     }
   }
